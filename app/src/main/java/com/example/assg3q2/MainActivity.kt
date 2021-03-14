@@ -10,18 +10,15 @@ class MainActivity : AppCompatActivity() {
     private var layoutManager:RecyclerView.LayoutManager?=null
     private var adapter:RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>?=null
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
 
         layoutManager=LinearLayoutManager(this)
         recyclerView.layoutManager=layoutManager
+
         adapter=RecyclerViewAdapter()
         recyclerView.adapter=adapter
     }

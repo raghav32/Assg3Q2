@@ -28,13 +28,9 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(
     )
 
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-         var image:ImageView
-         var textDes:TextView
+         var image:ImageView = itemView.findViewById(R.id.item_image)
+         var textDes:TextView = itemView.findViewById(R.id.item_text)
 
-         init {
-             image=itemView.findViewById(R.id.item_image)
-             textDes=itemView.findViewById(R.id.item_text)
-         }
     }
 
     override fun onCreateViewHolder(
