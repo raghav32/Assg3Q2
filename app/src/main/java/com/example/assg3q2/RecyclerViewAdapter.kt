@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(private val flavourList:List<AndroidFlavour>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
 
     private val itemText= arrayOf("Cupcake","Donut","Eclair","Froyo","GingerBread",
@@ -43,13 +43,16 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(
     }
 
     override fun onBindViewHolder(holder: RecyclerViewAdapter.ViewHolder, position: Int) {
-        holder.image.setImageResource(itemImages[position])
-        holder.textDes.text=itemText[position]
+
+        val currentItem=flavourList[position]
+
+        holder.image.setImageResource(currentItem.imageResource)
+        holder.textDes.text=currentItem.name
 
     }
 
     override fun getItemCount(): Int {
-        return itemText.size
+        return flavourList.size
     }
 
 }
